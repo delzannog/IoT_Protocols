@@ -1,0 +1,6 @@
+{"temperature":21.08,"humidity":48.21,"pressure":1023.25,"timestamp":1575575900219}
+{"temperature":21.16,"humidity":48.05,"pressure":1023.28,"timestamp":1575575901224}
+{"temperature":21.16,"humidity":48.1,"pressure":1023.23,"timestamp":1575575902236}
+{"temperature":21.18,"humidity":48.09,"pressure":1023.2,"timestamp":1575575903245}
+{"temperature":21.05,"humidity":47.98,"pressure":1023.19,"timestamp":1575575904253}
+{"temperature":21.16,"humidity":47.87,"pressure":1023.2,"timestamp":1575575905256}

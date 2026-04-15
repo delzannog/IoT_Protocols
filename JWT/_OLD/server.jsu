@@ -1,0 +1,55 @@
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const bodyParser = require('body-parser');
+const app = express();
+
+app.use('/samples', express.json({ limit: 100 }))
+
+app.get('/api',(req,res)=>{
+    res.json({
+        "message":"Hello",
+    });
+
+});
+
+
+app.post('/samples',(req,res)=>{
+    btoken=req.headers.authorization;
+    token =btoken.substring(7,btoken.length);
+    apikey=req.headers['api-key'],
+    bd=req.body;  
+    const data = {
+        email:   req.body.date,
+        value:   req.body.value,
+        userId:  req.body.userId,
+        measureType: req.body.measureType
+    };
+    console.log("AccessToken: ",accessToken);
+    console.log("Api-Key: ",apikey);
+    console.log("Data:");
+    console.log(data);
+    res.json({
+        "message":"OK",
+    });
+});
+
+
+app.post('/login',(req,res)=>{
+    console.log('Body Request:', req.body);
+    const user = {
+        email: req.body.email,
+        password: req.body.password
+    }
+
+    jwt.sign({user:user},'secretkey',(err,token)=>{
+        res.json({
+            "accessToken":token,
+            "userName":"Giancarlo Mascetti",
+            "userId":"Gianky"
+        });
+    });
+});
+
+app.listen(4000,(req,res)=>{
+    console.log('Avvio del server sulla porta 4000');
+});

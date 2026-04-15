@@ -1,0 +1,103 @@
+STRUCTURES
+
+types: map
+{
+    "office" : {
+        "publicNodeID": Set(),
+        "subscribed" : Set()
+    }
+}
+
+floors: map
+{
+    1 : {
+        "publicNodeID": Set(),
+        "subscribed" : Set()
+    }
+}
+
+id_pairs: map
+{
+    < privateID > : < publicID >
+}
+
+users: map
+{
+    < userID > : {
+        < publicID > : {
+            "temp" : 0.0,
+            "time": 00000000000
+        }
+    }
+}
+
+nodes: map
+{
+    < publicID > : {
+        "name" : "aula-710",
+        "type" : "lecture-room",
+        "floor" : 4,
+        "datas" : []
+    }
+}
+
+topics: Set
+contiene i topics mqtt a cui il server è iscritto,
+così da non dover ogni volta fare la subscribe
+
+
+
+EXAMPLES:
+
+types: map
+{
+    "office" : {
+        "publicNodeID": {"904561d2-ee17-473b-2e90-7d2cf0a78763", "cb1493ee-66e4-4ec3-e3a6-01c76abd6c9e"},
+        "subscribed" : {"02f9e8ae-a7be-4bb3-8bb7-1a8c65c7ff31"}
+    }
+}
+
+
+floors: map
+{
+    2 : {
+        "publicNodeID": {"904561d2-ee17-473b-2e90-7d2cf0a78763", "cb1493ee-66e4-4ec3-e3a6-01c76abd6c9e"},
+        "subscribed" : {"02f9e8ae-a7be-4bb3-8bb7-1a8c65c7ff31"}
+    }
+}
+
+id_pairs: map
+{
+    "f645e4af-6a75-4038-ab5b-b37fb5bc033f" : "904561d2-ee17-473b-2e90-7d2cf0a78763",
+    "4f58a3da-8120-4047-7efd-66013e8bf699" : "cb1493ee-66e4-4ec3-e3a6-01c76abd6c9e"
+}
+
+users: map
+{
+    "02f9e8ae-a7be-4bb3-8bb7-1a8c65c7ff31" : {
+        "904561d2-ee17-473b-2e90-7d2cf0a78763" : {
+            "temp" : 0.0,
+            "time": 00000000000
+        },
+        "cb1493ee-66e4-4ec3-e3a6-01c76abd6c9" : {
+            "temp" : 0.0,
+            "time": 00000000000
+        }
+    }
+}
+
+nodes: map
+{
+    "904561d2-ee17-473b-2e90-7d2cf0a78763" : {
+        "name" : "aula-710",
+        "type" : "lecture-room",
+        "floor" : 4,
+        "datas" : []
+    },
+    "cb1493ee-66e4-4ec3-e3a6-01c76abd6c9" : {
+        "name" : "aula-216",
+        "type" : "office",
+        "floor" : 2,
+        "datas" : []
+    }
+}
